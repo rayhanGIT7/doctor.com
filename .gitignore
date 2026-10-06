@@ -1,0 +1,7 @@
+/storage/logs/*.log
+/public/uploads/doctors/*
+!/public/uploads/doctors/.gitkeep
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
