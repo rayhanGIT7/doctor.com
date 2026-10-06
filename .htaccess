@@ -1,0 +1,4 @@
+# When the project folder itself is opened (e.g. http://localhost/doctor.com/),
+# forward everything to public/ so app/, config/ and database/ are never reachable.
+RewriteEngine On
+RewriteRule ^(.*)$ public/$1 [L]

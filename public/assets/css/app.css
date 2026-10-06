@@ -1,0 +1,293 @@
+/* MediBook - small custom layer on top of Bootstrap 5 */
+
+:root {
+    --brand: #0f766e;
+    --brand-dark: #115e59;
+    --brand-light: #e6f4f2;
+    --surface: #f5f7fa;
+
+    --bs-primary: #0f766e;
+    --bs-primary-rgb: 15, 118, 110;
+    --bs-link-color: #0f766e;
+    --bs-link-color-rgb: 15, 118, 110;
+    --bs-link-hover-color: #115e59;
+    --bs-link-hover-color-rgb: 17, 94, 89;
+    --bs-body-font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --bs-border-radius: .6rem;
+}
+
+body {
+    background: var(--surface);
+    color: #1f2937;
+}
+
+/* ---------- Buttons & forms ---------- */
+
+.btn-primary {
+    --bs-btn-bg: var(--brand);
+    --bs-btn-border-color: var(--brand);
+    --bs-btn-hover-bg: var(--brand-dark);
+    --bs-btn-hover-border-color: var(--brand-dark);
+    --bs-btn-active-bg: var(--brand-dark);
+    --bs-btn-active-border-color: var(--brand-dark);
+    --bs-btn-disabled-bg: var(--brand);
+    --bs-btn-disabled-border-color: var(--brand);
+}
+
+.btn-outline-primary {
+    --bs-btn-color: var(--brand);
+    --bs-btn-border-color: var(--brand);
+    --bs-btn-hover-bg: var(--brand);
+    --bs-btn-hover-border-color: var(--brand);
+    --bs-btn-active-bg: var(--brand);
+    --bs-btn-active-border-color: var(--brand);
+}
+
+.form-control:focus,
+.form-select:focus,
+.form-check-input:focus {
+    border-color: #5eb5ad;
+    box-shadow: 0 0 0 .2rem rgba(15, 118, 110, .15);
+}
+
+.form-check-input:checked {
+    background-color: var(--brand);
+    border-color: var(--brand);
+}
+
+.form-label {
+    font-weight: 500;
+    font-size: .9rem;
+}
+
+.pagination {
+    --bs-pagination-color: var(--brand);
+    --bs-pagination-active-bg: var(--brand);
+    --bs-pagination-active-border-color: var(--brand);
+}
+
+/* ---------- Common ---------- */
+
+.card {
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 2px rgba(16, 24, 40, .04);
+}
+
+.section-title {
+    font-weight: 700;
+    letter-spacing: -.01em;
+}
+
+.avatar {
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.avatar-initials {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--brand-light);
+    color: var(--brand);
+    font-weight: 600;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: #6b7280;
+}
+
+.empty-state i {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: .5rem;
+    color: #9ca3af;
+}
+
+.min-w-0 {
+    min-width: 0;
+}
+
+/* ---------- Public site ---------- */
+
+.hero {
+    background: linear-gradient(135deg, #0f766e 0%, #115e59 55%, #134e4a 100%);
+    color: #fff;
+    padding: 4rem 0 5rem;
+}
+
+.hero h1 {
+    font-weight: 800;
+    letter-spacing: -.02em;
+}
+
+.hero .lead {
+    color: rgba(255, 255, 255, .85);
+}
+
+.search-card {
+    margin-top: -3rem;
+    border: none;
+    box-shadow: 0 10px 30px rgba(16, 24, 40, .12);
+}
+
+.category-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: transform .15s, box-shadow .15s;
+}
+
+.category-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(16, 24, 40, .08);
+    color: inherit;
+}
+
+.icon-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--brand-light);
+    color: var(--brand);
+    font-size: 1.3rem;
+}
+
+.doctor-card {
+    transition: box-shadow .15s;
+}
+
+.doctor-card:hover {
+    box-shadow: 0 6px 18px rgba(16, 24, 40, .08);
+}
+
+/* Day picker on the doctor page */
+.day-tabs {
+    display: flex;
+    gap: .5rem;
+    overflow-x: auto;
+    padding-bottom: .25rem;
+}
+
+.day-tab {
+    flex: 0 0 auto;
+    min-width: 76px;
+    text-align: center;
+    padding: .5rem .4rem;
+    border: 1px solid #d1d5db;
+    border-radius: .6rem;
+    text-decoration: none;
+    color: #374151;
+    line-height: 1.2;
+}
+
+.day-tab small {
+    display: block;
+    font-size: .72rem;
+    color: #6b7280;
+}
+
+.day-tab.active {
+    background: var(--brand);
+    border-color: var(--brand);
+    color: #fff;
+}
+
+.day-tab.active small {
+    color: rgba(255, 255, 255, .85);
+}
+
+.day-tab.full {
+    opacity: .55;
+}
+
+.slot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(88px, 1fr));
+    gap: .5rem;
+}
+
+.slot-grid .btn {
+    font-size: .85rem;
+}
+
+/* ---------- Admin / doctor panel ---------- */
+
+.panel-sidebar {
+    width: 250px;
+    background: #0f2f2d;
+    color: #cbd5d3;
+}
+
+@media (min-width: 992px) {
+    .panel-sidebar {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        flex-shrink: 0;
+    }
+}
+
+.panel-sidebar .offcanvas-header,
+.panel-sidebar .brand {
+    color: #fff;
+}
+
+.panel-sidebar .nav-link {
+    color: #cbd5d3;
+    border-radius: .5rem;
+    padding: .55rem .8rem;
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+}
+
+.panel-sidebar .nav-link:hover {
+    background: rgba(255, 255, 255, .06);
+    color: #fff;
+}
+
+.panel-sidebar .nav-link.active {
+    background: var(--brand);
+    color: #fff;
+}
+
+.panel-topbar {
+    background: #fff;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.stat-card .stat-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.stat-card .stat-label {
+    color: #6b7280;
+    font-size: .85rem;
+}
+
+.table > :not(caption) > * > * {
+    padding: .7rem .75rem;
+}
+
+.table thead th {
+    font-size: .78rem;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    color: #6b7280;
+    font-weight: 600;
+    background: #f9fafb;
+}
+
+@media print {
+    .navbar, footer, .no-print {
+        display: none !important;
+    }
+}
